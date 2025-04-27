@@ -1,0 +1,14 @@
+flutter clean
+flutter pub get
+
+flutter build web --base-href / --release --web-renderer html
+
+echo "website.pesmoroccanfamily.com" > build/web/CNAME
+
+cd build/web
+
+git init
+git add .
+git commit -m "deploy"
+git remote add origin https://github.com/badrafyf77/jcr_settat_deploy.git
+git push --set-upstream --force origin master
